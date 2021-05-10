@@ -10,7 +10,7 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 import os
 
-st.write("""
+st.title("""
 # Heart Disease Prediction App
 
 This app predicts whether the person having given values of parameters based on tests is having heart disease or not type!
@@ -65,7 +65,7 @@ y = heart_disease["target"]
 
 from sklearn.linear_model import LogisticRegression
 
-logreg=LogisticRegression().fit(x,y)
+logreg=LogisticRegression(max_iter=4000).fit(x,y)
 
 prediction = logreg.predict(df)
 prediction_proba = logreg.predict_proba(df)
