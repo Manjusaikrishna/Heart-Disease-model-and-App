@@ -8,7 +8,8 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-import os
+import requests
+import io
 
 st.title("""
 # Heart Disease Prediction App
@@ -53,9 +54,9 @@ df = user_input_features()
 st.subheader("User Input Parameters")
 st.write(df)
 
-
-os.chdir("C:\\Users\PC\Documents")
-heart_disease = pd.read_csv("heart_disease.csv")
+url = "https://github.com/Manjusaikrishna/Heart-Disease-model-and-App/blob/master/heart_disease.csv" # Make sure the url is the raw version of the file on GitHub
+download = requests.get(url).content
+heart_disease = pd.read_csv(io.StringIO(download.decode('utf-8')))
 
 # create X(features matrix)
 x = heart_disease.drop("target",axis=1)
