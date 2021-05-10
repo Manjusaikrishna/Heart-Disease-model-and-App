@@ -54,7 +54,7 @@ df = user_input_features()
 st.subheader("User Input Parameters")
 st.write(df)
 
-url = "https://github.com/Manjusaikrishna/Heart-Disease-model-and-App/blob/master/heart_disease.csv" # Make sure the url is the raw version of the file on GitHub
+url = "https://raw.githubusercontent.com/Manjusaikrishna/Heart-Disease-model-and-App/master/heart_disease.csv" # Make sure the url is the raw version of the file on GitHub
 download = requests.get(url).content
 heart_disease = pd.read_csv(io.StringIO(download.decode('utf-8')))
 
