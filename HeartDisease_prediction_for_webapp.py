@@ -11,6 +11,11 @@ from sklearn.ensemble import RandomForestClassifier
 import requests
 import io
 
+np.float = float    
+np.int = int   #module 'numpy' has no attribute 'int'
+np.object = object    #module 'numpy' has no attribute 'object'
+np.bool = bool    #module 'numpy' has no attribute 'bool'
+
 st.title("""
 Heart Disease Prediction App
 This app predicts whether the person having given values of parameters based on tests is having heart disease or not type
